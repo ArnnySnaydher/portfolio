@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebSite Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f70a115ffb.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div id="header">
         <div class="container">
@@ -34,8 +37,10 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum recusandae tempora tenetur, similique esse, eaque rem delectus vero architecto, aliquid laborum. Molestias quis dolore perferendis animi inventore illo veritatis maxime!</p>
-                    
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum recusandae tempora tenetur,
+                        similique esse, eaque rem delectus vero architecto, aliquid laborum. Molestias quis dolore
+                        perferendis animi inventore illo veritatis maxime!</p>
+
                     <div class="tab-titles">
                         <p class="tab-links activate-link" onclick="opentab('skills')">Skills</p>
                         <p class="tab-links" onclick="opentab('experience')">Experience</p>
@@ -74,15 +79,57 @@
             </div>
         </div>
     </div>
+<!--------------------- services -------------------->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque fuga placeat ratione dicta
+                        eveniet
+                        assumenda, officia ipsam, quia maxime reiciendis minus, minima corporis adipisci molestias
+                        repellendus facere repudiandae unde excepturi.
+                    </p>
+                    <a href="#">Learn more</a>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>UI/UX Design</h2>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque fuga placeat ratione dicta
+                        eveniet
+                        assumenda, officia ipsam, quia maxime reiciendis minus, minima corporis adipisci molestias
+                        repellendus facere repudiandae unde excepturi.
+                    </p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store-ios"></i>
+                    <h2>App Design</h2>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque fuga placeat ratione dicta
+                        eveniet
+                        assumenda, officia ipsam, quia maxime reiciendis minus, minima corporis adipisci molestias
+                        repellendus facere repudiandae unde excepturi.
+                    </p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
-        function opentab(tabname){
-            for(tablink of tablinks){
+        function opentab(tabname) {
+            for (tablink of tablinks) {
                 tablink.classList.remove("activate-link");
             }
 
-            for(tabcontent of tabcontents){
+            for (tabcontent of tabcontents) {
                 tabcontent.classList.remove("activate-tab");
             }
 
@@ -93,4 +140,5 @@
 
     </script>
 </body>
+
 </html>
