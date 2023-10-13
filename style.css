@@ -11,6 +11,10 @@ body {
     color: #fff;
 }
 
+html{
+    scroll-behavior:smooth ;
+}
+
 #header {
     width: 100vh;
     height: 100vh;
@@ -363,9 +367,13 @@ form .btn2{
 nav .fa-solid{
     display: none;
 }
-@media only screen and (max-width:600px){
+@media only screen and (max-width: 600px){
+    
     #header{
         background-image: url(images/phone-background.png);
+        width: 100%;
+        height: auto;
+    
     }
     .header-text{
         margin-top: 100%;
