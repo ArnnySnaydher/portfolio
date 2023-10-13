@@ -13,7 +13,7 @@
     <div id="header">
         <div class="container">
             <nav>
-                <img src="images/logo.png" class="logo">
+                <img src="images/logo.png" class="logo" alt="">
                 <ul id="sidemenu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -129,31 +129,31 @@
         <div class="container">
             <h1 class="sub-title">My Work</h1>
             <div class="work-list">
-                <div class="work"> <img src="images/work-1.png">
+                <div class="work"> <img src="images/work-1.png" alt="">
                     <div class="layer">
                         <h3>Music App</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum maiores laudantium animi,
                             harum in placeat, quo tempore accusamus esse unde veniam, error modi nemo id consectetur
                             blanditiis voluptatum dolorum quam?</p>
-                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                        <a href="#" aria-label="app1"><i class="fa-solid fa-link"></i></a>
                     </div>
                 </div>
-                <div class="work"> <img src="images/work-2.png">
+                <div class="work"> <img src="images/work-2.png" alt="">
                     <div class="layer">
                         <h3>Online Shopping App</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum maiores laudantium animi,
                             harum in placeat, quo tempore accusamus esse unde veniam, error modi nemo id consectetur
                             blanditiis voluptatum dolorum quam?</p>
-                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                        <a href="#" aria-label="app2"><i class="fa-solid fa-link"></i></a>
                     </div>
                 </div>
-                <div class="work"> <img src="images/work-3.png">
+                <div class="work"> <img src="images/work-3.png" alt="">
                     <div class="layer">
                         <h3>Social Media App</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum maiores laudantium animi,
                             harum in placeat, quo tempore accusamus esse unde veniam, error modi nemo id consectetur
                             blanditiis voluptatum dolorum quam?</p>
-                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                        <a href="#" aria-label="app3"><i class="fa-solid fa-link"></i></a>
                     </div>
                 </div>
 
@@ -172,18 +172,18 @@
                     <p><i class="fa-solid fa-paper-plane"></i>contact@example.com</p>
                     <p><i class="fa-solid fa-phone"></i>012345678</p>
                     <div class="social-icons">
-                        <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://facebook.com/" aria-label="facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" aria-label="twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="linkedin"><i class="fa-brands fa-linkedin"></i></a>
 
                     </div>
                     <a href="images/my-cv.pdf" download class="btn btn2">Download Cv</a>
                 </div>
                 <div class="contact-right">
-                    <form action="">
-                        <input type="text" name="name" id="" placeholder="Your Name" required>
-                        <input type="email" name="email" id="" placeholder="Your Email" required>
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
                         <textarea name="message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
@@ -195,6 +195,18 @@
             <p>Copyright @ Arnny. Made with by <i class="fa-solid fa-heart"></i> by Easy Tutotial</p>
         </div>
     </div>
+    <script>
+        
+        const formulario = document.forms['submit-to-google-sheet'];
+        formulario.onsubmit = function(e){
+            e.preventDefault();
+            var name = formulario.elements['name'].value;
+            var email = formulario.elements['email'].value;
+            var message = formulario.elements['message'].value;
+            console.log(name,email,message)
+        }
+        
+    </script>
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
@@ -225,6 +237,18 @@
             sidemenu.style.right="-200px";
         }
     </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyhoMhd-qj7rDukemwPW6tLFLLLZ4IVrAjsCzFxodXH7agi5DmjFbdrOtogviJPGoJd/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 </body>
 
 </html>
