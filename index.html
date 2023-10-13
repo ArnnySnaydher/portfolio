@@ -187,6 +187,7 @@
                         <textarea name="message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
+                    <span id="msg"></span>
                 </div>
 
             </div>
@@ -196,16 +197,16 @@
         </div>
     </div>
     <script>
-        
+
         const formulario = document.forms['submit-to-google-sheet'];
-        formulario.onsubmit = function(e){
+        formulario.onsubmit = function (e) {
             e.preventDefault();
             var name = formulario.elements['name'].value;
             var email = formulario.elements['email'].value;
             var message = formulario.elements['message'].value;
-            console.log(name,email,message)
+            console.log(name, email, message)
         }
-        
+
     </script>
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
@@ -229,26 +230,33 @@
     <script>
         var sidemenu = document.getElementById("sidemenu");
 
-        function openmenu(){
-            sidemenu.style.right="0";
+        function openmenu() {
+            sidemenu.style.right = "0";
         }
 
-        function closemenu(){
-            sidemenu.style.right="-200px";
+        function closemenu() {
+            sidemenu.style.right = "-200px";
         }
     </script>
 
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyhoMhd-qj7rDukemwPW6tLFLLLZ4IVrAjsCzFxodXH7agi5DmjFbdrOtogviJPGoJd/exec'
-    const form = document.forms['submit-to-google-sheet']
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyhoMhd-qj7rDukemwPW6tLFLLLZ4IVrAjsCzFxodXH7agi5DmjFbdrOtogviJPGoJd/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById('msg')
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 </body>
 
 </html>
