@@ -16,28 +16,23 @@ html{
 }
 
 #header {
-    width: 100vh;
-    height: 100vh;
-    background-image: url(images/background.png);
+    width: auto;
+    height: 50vh;
+    background-image: url(images/luz.jpg);
     background-size: cover;
     background-position: center;
 }
 
 .container {
-
-    padding: 10px 10%;
+    text-align: center;
 }
 
 nav {
-    display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.logo {
-    width: 140px;
-}
 
 nav ul li {
     display: inline-block;
@@ -68,8 +63,8 @@ nav ul li a:hover::after {
 }
 
 .header-text {
-    margin-top: 60px;
     font-size: 30px;
+    margin-top: 10%;
 }
 
 .header-text h1 {
@@ -92,10 +87,12 @@ nav ul li a:hover::after {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: a;
 }
 
 .about-col-1 {
     flex-basis: 35%;
+    
 }
 
 .about-col-1 img {
@@ -370,13 +367,13 @@ nav .fa-solid{
 @media only screen and (max-width: 600px){
     
     #header{
-        background-image: url(images/phone-background.png);
+        background-image: url(images/luz.jpg);
         width: 100%;
         height: auto;
     
     }
     .header-text{
-        margin-top: 100%;
+        margin-top: 30%;
         font-size: 16px;
     }
     .header-text h1{
